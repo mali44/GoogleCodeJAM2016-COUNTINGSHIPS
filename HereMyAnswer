@@ -1,0 +1,85 @@
+import java.util.Scanner;
+
+import javax.print.attribute.standard.OutputDeviceAssigned;
+
+public class GCJ {
+	
+	private static int Number;
+	private static int testcases=0;
+	private static  int digits;
+	private static  int  numberCounter=0;
+	private static String store="";
+	private static int store1;
+	private static StringBuilder sb;
+	private static boolean z0,a1,b2,c3,d4,e5,f6,g7,h8,k9;
+
+	
+	public static void main(String args []){
+		GCJ google = new GCJ();
+		int i=0;
+		int j;
+		
+		Scanner sc= new Scanner (System.in);		
+		System.out.println("enter the number of testcases");
+		testcases=sc.nextInt();
+		
+		for(i=0;i<=testcases;i++){			
+			google.getDefault();
+			System.out.println("Enter the number of naming");
+			Number = sc.nextInt();	
+			
+			for(j=1;j<=201;j++)
+			{
+				 	store1 = Number * j ;
+				 	sb= new StringBuilder();
+				 	store=""+store1;
+					sb.append(store);
+					
+					
+				for(int q=0;q<sb.length();q++)
+				{					
+					switch(sb.charAt(q))
+						{
+					
+					case '0' : z0=true; break;
+					case '1' : a1=true; break;
+					case '2' : b2=true; break;
+					case '3' : c3=true; break;
+					case '4' : d4=true; break;
+					case '5' : e5=true; break;
+					case '6' : f6=true; break;
+					case '7' : g7=true; break;
+					case '8' : h8=true; break;
+					case '9' : k9=true; break;
+					
+						}
+				}
+				if(j==201){
+					System.out.println("INSOMNIA");
+					
+				}
+				if(z0 && a1 && b2 && c3 && d4 && e5 && f6 && g7 && h8 && k9)
+					
+				{
+					google.read(store, i);
+					google.getDefault();
+					j=0;
+					break;
+				}
+			}
+		}
+		
+			
+	}
+	
+	public synchronized void read(String st, int a){
+		System.out.print("Case#"+a+" "+  st+"\n");
+	}
+	public synchronized void getDefault(){
+		z0=false;a1=false;b2=false;c3=false;d4=false;e5=false;f6=false;g7=false;h8=false;k9=false;
+
+	}
+		
+
+}
+
